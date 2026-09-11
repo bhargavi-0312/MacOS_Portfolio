@@ -3,7 +3,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
 const FONT_WEIGHT = {
-    subtitle: { min: 100, max: 400, default: 100 },
+    subtitle: { min: 100, max: 400, default: 300 },
     title: { min: 400, max: 900, default: 400 }
 };
 
@@ -58,9 +58,14 @@ const setupTextHover = (container, type) => {
     };
 
     const handleMouseLeave = () => {
-        letters.forEach((letter) =>
-            animateLetters(letter, base, 0.3)
-        );
+        letters.forEach((letter) => {
+            animateLetters(letter, base, 0.3);
+            gsap.to(letter, {
+                duration: 0.3,
+                ease: "power2.out",
+                filter: "brightness(1)",
+            });
+        });
     };
 
     container.addEventListener("mousemove", handleMouseMove);
@@ -99,7 +104,7 @@ const Welcome = () => {
                 {renderText(
                     "Hey , I'm Bhargavi ! Welcome to my ",
                     "text-3xl font-georama drop-shadow-[0_1px_1px_rgba(0,0,0,0.4)]",
-                    700
+                    300
                 )}
             </p>
 

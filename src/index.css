@@ -72,6 +72,11 @@ body {
         -translate-x-1/2 -translate-y-1/2
         select-none text-center;
 
+        h1 {
+            font-size: 150px;
+            font-weight: 600;
+        }
+
         color: white;
 
         .small-screen {
@@ -80,11 +85,8 @@ body {
 
             p {
                 @apply text-center font-roboto;
-                color: white;
-            }
-            h1{
-                font-size:150px;font-weight: 600;
 
+                color: white;
             }
         }
     }
