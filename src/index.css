@@ -193,17 +193,19 @@ body {
             .content {
                 @apply py-5 my-5 border-y border-dashed space-y-1;
 
-                li {
+                > li {
+                    @apply flex items-center gap-2;
+
                     .check {
-                        @apply text-[#00A154] w-5;
+                        @apply text-[#00A154] w-5 flex-none;
                     }
 
                     h3 {
-                        @apply font-semibold text-[#00A154] w-32 ms-5;
+                        @apply font-semibold text-[#00A154] w-32 flex-none;
                     }
 
-                    ul {
-                        @apply flex items-center gap-3;
+                    > ul {
+                        @apply flex flex-1 items-center gap-3;
                     }
                 }
             }
