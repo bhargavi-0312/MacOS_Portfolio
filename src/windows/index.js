@@ -5,4 +5,14 @@ import Finder from "./Finder.jsx";
 import TxtFile from "./TxtFile.jsx";
 import ImgFile from "./ImgFile.jsx";
 import Contact from "./Contact.jsx";
-export { Terminal, Safari, Resume, Finder, TxtFile, ImgFile, Contact };
+import Photos from "./Photos.jsx";
+export {
+    Terminal,
+    Safari,
+    Resume,
+    Finder,
+    TxtFile,
+    ImgFile,
+    Contact,
+    Photos,
+};

@@ -6,7 +6,8 @@ import { useGSAP } from "@gsap/react";
 import useWindowStore from "#store/window.js";
 
 const Dock = () => {
-    const { openWindow, closeWindow, windows } = useWindowStore();
+    const { openWindow, closeWindow, toggleArchive, windows } =
+        useWindowStore();
     const dockRef = useRef(null);
 
     useGSAP(() => {
@@ -60,15 +61,20 @@ const Dock = () => {
     }, []);
 
     const toggleApp = (app) => {
-        if (!app.canOpen) return;
-
-            const window = windows[app.id];
-            if (!window) {
-                console.error(`window not founf for apps :${app.id}`);
-
+        if (app.action === "close-all") {
+            toggleArchive();
+            return;
         }
 
-        if (window.isOpen) {
+        if (!app.canOpen) return;
+
+        const appWindow = windows[app.id];
+        if (!appWindow) {
+            console.error(`Window not found for app: ${app.id}`);
+            return;
+        }
+
+        if (appWindow.isOpen) {
             closeWindow(app.id);
         } else {
             openWindow(app.id);
@@ -80,7 +86,7 @@ const Dock = () => {
     return (
         <section id="dock">
             <div ref={dockRef} className="dock-container">
-                {dockApps.map(({ id, name, icon, canOpen }) => (
+                {dockApps.map(({ id, name, icon, canOpen, action }) => (
                     <div key={id} className="relative flex justify-center">
                         <button
                             type="button"
@@ -89,8 +95,8 @@ const Dock = () => {
                             data-tooltip-id="dock-tooltip"
                             data-tooltip-content={name}
                             data-tooltip-delay-show={150}
-                            disabled={!canOpen}
-                            onClick={() => toggleApp({ id, canOpen })}
+                            disabled={!canOpen && !action}
+                            onClick={() => toggleApp({ id, canOpen, action })}
                         >
                             <img
                                 src={`/images/${icon}`}

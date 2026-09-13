@@ -1,36 +1,13 @@
 import { WindowControls } from "#components/index.js";
 import WindowWrapper from "#constants/hoc/WindowWrapper.jsx";
 import { blogPosts } from "#constants/index.js";
-import {
-    ChevronLeft,
-    ChevronRight,
-    MoveRight,
-    PanelLeft,
-    Search,
-    ShieldHalf,
-} from "lucide-react";
+import { MoveRight } from "lucide-react";
 
 const Safari = () => {
     return (
         <>
             <div id="window-header">
                 <WindowControls target="safari"/>
-
-                <PanelLeft className="ml-10 icon"/>
-                <div className="flex items-center gap-1 ml-5">
-                    <ChevronLeft className="icon"/>
-                    <ChevronRight className="icon"/>
-                </div>
-                <div className="flex-1 flex-center gap-3">
-                    <ShieldHalf className="icon"/>
-                    <div className="search">
-                        <Search className="icon"/>
-                        <input
-                            type="text"
-                            placeholder="Search or enter Website name"
-                            className="flex-1"/>
-                    </div>
-                </div>
             </div>
             <div className="blog">
                 <h2> My Developer Blog</h2>

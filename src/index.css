@@ -37,7 +37,7 @@ body {
     }
 
     nav {
-        @apply flex justify-between items-center bg-white/50 backdrop-blur-3xl p-2 px-5 select-none;
+        @apply relative flex justify-between items-center bg-white/50 backdrop-blur-3xl p-2 px-5 select-none;
 
         div {
             @apply flex items-center max-sm:w-full max-sm:justify-center gap-5;
@@ -56,6 +56,30 @@ body {
 
             button {
                 @apply text-sm cursor-pointer hover:underline transition-all;
+            }
+        }
+
+        .navbar-search {
+            @apply absolute top-12 right-24 z-[100] w-72 rounded-lg bg-white/90 p-2 shadow-xl backdrop-blur-xl;
+
+            input {
+                @apply w-full rounded-md border border-gray-200 px-3 py-2 text-sm outline-none;
+            }
+
+            ul {
+                @apply mt-1 flex flex-col gap-0;
+
+                li {
+                    @apply w-full;
+
+                    button {
+                        @apply w-full rounded-md px-3 py-2 text-left text-sm hover:bg-blue-100;
+                    }
+
+                    &.empty {
+                        @apply px-3 py-2 text-sm text-gray-500;
+                    }
+                }
             }
         }
 
@@ -275,10 +299,11 @@ body {
     }
 
     #photos {
-        @apply max-w-3xl absolute top-96 left-1/2 -translate-y-1/2 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
+        @apply w-[580px] h-[430px] min-w-[min(380px,calc(100vw-2rem))] min-h-[min(280px,calc(100dvh-8rem))] max-w-[calc(100vw-2rem)] max-h-[calc(100dvh-8rem)] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white shadow-2xl drop-shadow-2xl rounded-xl resize overflow-auto;
+        resize: both;
 
         .sidebar {
-            @apply w-3/12 flex-none bg-gray-50 border-r border-gray-200 flex flex-col p-5;
+            @apply w-1/4 min-w-[130px] flex-none bg-gray-50 border-r border-gray-200 flex flex-col p-4;
 
             h2 {
                 @apply text-xs font-medium text-gray-400 mb-1;
@@ -288,7 +313,15 @@ body {
                 li {
                     @apply flex space-y-1 items-center gap-2 px-3 py-2 rounded-md cursor-pointer transition-colors;
 
+                    button {
+                        @apply flex w-full items-center gap-2 text-left cursor-pointer;
+                    }
+
                     &:first-child {
+                        @apply bg-blue-100 text-blue-700;
+                    }
+
+                    &.active {
                         @apply bg-blue-100 text-blue-700;
                     }
 
@@ -304,14 +337,25 @@ body {
         }
 
         .gallery {
-            @apply p-5;
+            @apply flex-1 p-4 overflow-auto;
 
             ul {
-                @apply grid grid-cols-5 grid-rows-5 gap-2.5;
+                @apply grid grid-cols-5 auto-rows-[70px] gap-2;
 
                 li {
+                    @apply overflow-hidden;
+
+                    button {
+                        @apply block size-full cursor-pointer;
+                    }
+
                     img {
-                        @apply size-full object-cover rounded-lg;
+                        @apply size-full object-cover rounded-lg transition-transform;
+                    }
+
+                    &:hover img,
+                    &:focus-within img {
+                        @apply scale-105;
                     }
 
                     &:first-child {
@@ -427,18 +471,35 @@ body {
     }
 
     #home {
-        @apply relative z-0 max-sm:hidden;
+        @apply absolute inset-0 z-0 max-sm:hidden pointer-events-none;
 
         ul {
             li {
                 @apply absolute z-0 select-none flex items-center flex-col;
 
+                button {
+                    @apply pointer-events-auto flex items-center flex-col cursor-grab;
+                }
+
                 img {
-                    @apply group-hover:bg-gray-950/10 p-1 rounded-md;
+                    @apply size-12 object-contain p-1 rounded-md;
                 }
 
                 p {
-                    @apply text-sm text-white text-center px-1 rounded-md group-hover:bg-blue-500 transition-colors max-w-40;
+                    @apply text-[10px] leading-tight text-white text-center px-1 rounded-md transition-colors max-w-24;
+                }
+
+                &:hover p,
+                &:focus-within p {
+                    @apply bg-blue-500;
+                }
+
+                &.is-dragging {
+                    @apply z-10;
+
+                    button {
+                        @apply cursor-grabbing;
+                    }
                 }
             }
         }

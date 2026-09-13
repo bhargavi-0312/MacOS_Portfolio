@@ -1,5 +1,4 @@
 import { WindowControls } from "#components/index.js";
-import { Search } from "lucide-react";
 import WindowWrapper from "#constants/hoc/WindowWrapper.jsx";
 import { locations } from "#constants/index.js";
 import useLocationStore from "#store/location.js";
@@ -13,7 +12,6 @@ const Finder = () => {
     const [selectedFavorite, setSelectedFavorite] = useState(
         locations.work.id,
     );
-
     const openItem = (item) => {
         if (item.kind === "folder") {
             setSelectedProject(item);
@@ -50,19 +48,21 @@ const Finder = () => {
 
     const displayedLocation =
         selectedProject || activeLocation;
+    const favorites = Object.values(locations);
+    const projects = locations.work.children;
+    const visibleItems = displayedLocation?.children || [];
 
     return (
         <>
             <div id="window-header">
                 <WindowControls target="finder" />
-                <Search className="icon" />
             </div>
             <div className="bg-white flex h-full">
                 <div className="sidebar">
                     <div>
                         <h3>Favourites</h3>
                         <ul>
-                            {Object.values(locations).map((item) => (
+                            {favorites.map((item) => (
                                 <li
                                     key={item.id}
                                     className={
@@ -87,7 +87,7 @@ const Finder = () => {
                     <div>
                         <h3>Work</h3>
                         <ul>
-                            {locations.work.children.map((project) => (
+                            {projects.map((project) => (
                                 <li
                                     key={project.id}
                                     className={
@@ -108,7 +108,7 @@ const Finder = () => {
                     </div>
                 </div>
                 <div className="content">
-                    {displayedLocation?.children?.map((item) => (
+                    {visibleItems.map((item) => (
                         <li
                             key={item.id}
                             className={item.position}

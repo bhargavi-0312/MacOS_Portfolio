@@ -6,6 +6,7 @@ const useWindowStore = create(
     immer((set) => ({
         windows: WINDOW_CONFIG,
         nextZIndex: INITIAL_Z_INDEX + 1,
+        archivedWindows: null,
 
         openWindow: (windowKey, data = null) =>
             set((state) => {
@@ -23,6 +24,52 @@ const useWindowStore = create(
                 win.isOpen = false;
                 win.zIndex = INITIAL_Z_INDEX;
                 win.data = null;
+            }),
+        closeAllWindows: () =>
+            set((state) => {
+                Object.values(state.windows).forEach((win) => {
+                    win.isOpen = false;
+                    win.zIndex = INITIAL_Z_INDEX;
+                    win.data = null;
+                });
+            }),
+        toggleArchive: () =>
+            set((state) => {
+                const openWindows = Object.entries(state.windows).filter(
+                    ([, win]) => win.isOpen,
+                );
+
+                if (openWindows.length > 0) {
+                    state.archivedWindows = Object.fromEntries(
+                        openWindows.map(([key, win]) => [
+                            key,
+                            {
+                                data: win.data,
+                                zIndex: win.zIndex,
+                            },
+                        ]),
+                    );
+
+                    Object.values(state.windows).forEach((win) => {
+                        win.isOpen = false;
+                        win.zIndex = INITIAL_Z_INDEX;
+                        win.data = null;
+                    });
+                    return;
+                }
+
+                if (!state.archivedWindows) return;
+
+                Object.entries(state.archivedWindows).forEach(
+                    ([key, archivedWindow]) => {
+                        const win = state.windows[key];
+                        if (!win) return;
+
+                        win.isOpen = true;
+                        win.zIndex = archivedWindow.zIndex;
+                        win.data = archivedWindow.data;
+                    },
+                );
             }),
 
         focusWindow: (windowKey) =>
