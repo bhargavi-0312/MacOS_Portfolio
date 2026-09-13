@@ -11,7 +11,7 @@ const Contact = () => {
             </div>
             <div className="contact-content">
                 <img
-                    src="/images/adrian.jpg"
+                    src="/images/bhargavi.jpg"
                     alt="Profile"
                     className="contact-avatar"
                 />

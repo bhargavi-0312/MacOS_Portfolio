@@ -226,7 +226,7 @@ const WORK_LOCATION = {
         // ▶ Project 1
         {
             id: 5,
-            name: "Nike Ecommerce Website Application",
+            name: "Digital Notice Board",
             icon: "/images/folder.png",
             kind: "folder",
             position: "top-10 left-5", // icon position inside Finder
@@ -234,30 +234,30 @@ const WORK_LOCATION = {
             children: [
                 {
                     id: 1,
-                    name: "Nike Project.txt",
+                    name: "Digital Notice Board Project.txt",
                     icon: "/images/txt.png",
                     kind: "file",
                     fileType: "txt",
                     position: "top-5 left-10",
                     description: [
-                        "The Nike eCommerce website is a sleek and modern platform designed for shopping the latest Nike collections.",
-                        "Instead of a simple online store, it delivers an immersive experience with bold visuals, interactive product displays, and smooth navigation.",
-                        "Think of it like walking into a flagship Nike store—but right from your phone or laptop.",
-                        "It's built with Next.js and Tailwind, ensuring fast performance, responsive design, and a clean, premium look.",
+                        "The Digital Notice Board is a sleek and modern platform designed for sharing updates, announcements, and important information in a clear and engaging way.",
+                        "Instead of a static board, it creates an interactive experience with clean layouts, real-time updates, and easy navigation.",
+                        "Think of it like a digital bulletin board—accessible from any device and built to keep everyone informed at a glance.",
+                        "It is crafted to feel polished, responsive, and efficient, helping users view information quickly and comfortably.",
                     ],
                 },
                 {
                     id: 2,
-                    name: "nike.com",
+                    name: "digital-notice-board.com",
                     icon: "/images/safari.png",
                     kind: "file",
                     fileType: "url",
-                    href: "https://youtu.be/fZdTYswuZjU?si=Awjl-pIst9e09_UU",
+                    href: "https://github.com/bhargavi-0312/Digital_Notice_Board",
                     position: "top-10 right-20",
                 },
                 {
                     id: 4,
-                    name: "nike.png",
+                    name: "digital-notice-board.png",
                     icon: "/images/image.png",
                     kind: "file",
                     fileType: "img",
@@ -266,7 +266,7 @@ const WORK_LOCATION = {
                 },
                 {
                     id: 5,
-                    name: "Design.fig",
+                    name: "Digital Notice Board.fig",
                     icon: "/images/plain.png",
                     kind: "file",
                     fileType: "fig",
@@ -279,7 +279,7 @@ const WORK_LOCATION = {
         // ▶ Project 2
         {
             id: 6,
-            name: "AI Resume Analyzer",
+            name: "My Portfolio",
             icon: "/images/folder.png",
             kind: "folder",
             position: "top-52 right-80",
@@ -287,30 +287,30 @@ const WORK_LOCATION = {
             children: [
                 {
                     id: 1,
-                    name: "AI Resume Analyzer Project.txt",
+                    name: "My Portfolio Project.txt",
                     icon: "/images/txt.png",
                     kind: "file",
                     fileType: "txt",
                     position: "top-5 right-10",
                     description: [
-                        "AI Resume Analyzer is a smart tool that helps you perfect your resume with instant feedback.",
-                        "Instead of guessing what recruiters want, you get AI-powered insights on keywords, formatting, and overall impact.",
-                        "Think of it like having a career coach—pointing out strengths, fixing weaknesses, and boosting your chances of landing interviews.",
-                        "It's built with Next.js and Tailwind, so it runs fast, looks professional, and works seamlessly on any device.",
+                        "My Portfolio is a personal showcase built to highlight my work, skills, and creative projects in a polished and memorable way.",
+                        "Instead of a plain résumé, it creates an immersive experience that lets people explore my projects, interests, and personality.",
+                        "Think of it like a digital identity—designed to feel modern, welcoming, and easy to navigate.",
+                        "It is crafted with a clean interface and thoughtful design so visitors can connect with my work effortlessly.",
                     ],
                 },
                 {
                     id: 2,
-                    name: "ai-resume-analyzer.com",
+                    name: "my-portfolio.com",
                     icon: "/images/safari.png",
                     kind: "file",
                     fileType: "url",
-                    href: "https://youtu.be/iYOz165wGkQ?si=R1hs8Legl200m0Cl",
+                    href: "https://github.com/bhargavi-0312/MacOS_Portfolio",
                     position: "top-20 left-20",
                 },
                 {
                     id: 4,
-                    name: "ai-resume-analyzer.png",
+                    name: "my-portfolio.png",
                     icon: "/images/image.png",
                     kind: "file",
                     fileType: "img",
@@ -319,7 +319,7 @@ const WORK_LOCATION = {
                 },
                 {
                     id: 5,
-                    name: "Design.fig",
+                    name: "My Portfolio.fig",
                     icon: "/images/plain.png",
                     kind: "file",
                     fileType: "fig",
@@ -358,7 +358,7 @@ const WORK_LOCATION = {
                     icon: "/images/safari.png",
                     kind: "file",
                     fileType: "url",
-                    href: "https://youtu.be/LKrX390fJMw?si=cExkuVhf2DTV9G2-",
+                    href: "https://github.com/bhargavi-0312/Food-Odering-web-app",
                     position: "top-10 right-20",
                 },
                 {
@@ -398,7 +398,7 @@ const ABOUT_LOCATION = {
             kind: "file",
             fileType: "img",
             position: "top-10 left-5",
-            imageUrl: "/images/adrian.jpg",
+            imageUrl: "/images/bhargavi.jpg",
         },
         {
             id: 2,
@@ -407,7 +407,7 @@ const ABOUT_LOCATION = {
             kind: "file",
             fileType: "img",
             position: "top-28 right-72",
-            imageUrl: "/images/adrian-2.jpg",
+            imageUrl: "/images/bhargavi-2.jpg",
         },
         {
             id: 3,
@@ -416,7 +416,7 @@ const ABOUT_LOCATION = {
             kind: "file",
             fileType: "img",
             position: "top-52 left-80",
-            imageUrl: "/images/adrian-3.jpeg",
+            imageUrl: "/images/bhargavi-3.jpeg",
         },
         {
             id: 4,
@@ -426,12 +426,12 @@ const ABOUT_LOCATION = {
             fileType: "txt",
             position: "top-60 left-5",
             subtitle: "Meet the Developer Behind the Code",
-            image: "/images/adrian.jpg",
+            image: "/images/bhargavi.jpg",
             description: [
-                "Hey! I’m Adrian 👋, a web developer who enjoys building sleek, interactive websites that actually work well.",
-                "I specialize in JavaScript, React, and Next.js—and I love making things feel smooth, fast, and just a little bit delightful.",
-                "I’m big on clean UI, good UX, and writing code that doesn’t need a search party to debug.",
-                "Outside of dev work, you'll find me tweaking layouts at 2AM, sipping overpriced coffee, or impulse-buying gadgets I absolutely convinced myself I needed 😅",
+                "Hey! I’m Bhargavi 👋, a developer who enjoys creating sleek, interactive websites that feel smooth, modern, and fun to use.",
+                "I specialize in JavaScript, React, and web development—and I love turning ideas into experiences that are fast, responsive, and just a little bit delightful.",
+                "I’m big on clean UI, good UX, and writing code that’s simple, organized, and actually makes sense.",
+                "Outside of coding, you’ll find me exploring new ideas, tweaking my projects at 2AM, listening to music, or probably convincing myself that I absolutely need another gadget 😅",
             ],
         },
     ],
