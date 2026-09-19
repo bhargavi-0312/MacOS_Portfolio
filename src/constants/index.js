@@ -144,10 +144,10 @@ const socials = [
     },
     {
         id: 3,
-        text: "Twitter/X",
-        icon: "/icons/twitter.svg",
+        text: "Email",
+        icon: "/icons/email.svg",
         bg: "#ff866b",
-        link: "https://x.com/jsmasterypro",
+        link: "mailto:akulabhargavi03@gmail.com",
     },
     {
         id: 4,
